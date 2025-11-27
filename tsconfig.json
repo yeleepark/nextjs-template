@@ -16,6 +16,9 @@
     "incremental": true,
     "types": ["node"],
     "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "plugins": [
       {
         "name": "next"
