@@ -1,62 +1,62 @@
 # Next.js Template
 
-간단한 Next.js + TypeScript 템플릿입니다. ESLint와 Prettier가 기본 설정되어 있으며, "HI" 텍스트만 보여주는 랜딩 페이지가 포함되어 있습니다. Yarn Berry 기반으로 동작합니다.
+A simple Next.js + TypeScript template. Comes with ESLint and Prettier pre-configured, and includes a landing page displaying "HI" text. Built on Yarn Berry.
 
 ## Scripts
 
-- `yarn dev` - 개발 서버 실행
-- `yarn build` - 프로덕션 빌드
-- `yarn start` - 프로덕션 서버 실행
-- `yarn lint` - ESLint 검사
-- `yarn format` - Prettier 검사
-- `yarn format:write` - Prettier 자동 정렬
+- `yarn dev` - Run development server
+- `yarn build` - Build for production
+- `yarn start` - Run production server
+- `yarn lint` - Run ESLint check
+- `yarn format` - Run Prettier check
+- `yarn format:write` - Auto-format with Prettier
 
-## 시작하기
+## Getting Started
 
 ```bash
 yarn install
 yarn dev
 ```
 
-## Axios 설정
+## Axios Setup
 
-이 템플릿은 axios 기반 API 클라이언트를 포함하고 있습니다.
+This template includes an axios-based API client.
 
-### 환경 변수 설정
+### Environment Variables
 
-`.env.local` 파일을 생성하고 다음 변수를 설정하세요:
+Create a `.env.local` file and set the following variable:
 
 ```
 NEXT_PUBLIC_API_BASE_URL=http://localhost:3000/api
 ```
 
-### 사용 예제
+### Usage Example
 
 ```typescript
 import { exampleApi } from '@/lib/api/services/example';
 
-// GET 요청
+// GET request
 const users = await exampleApi.getUsers();
 
-// POST 요청
+// POST request
 const newUser = await exampleApi.createUser({
-  name: '홍길동',
-  email: 'hong@example.com',
+  name: 'John Doe',
+  email: 'john@example.com',
 });
 
-// PUT 요청
+// PUT request
 const updatedUser = await exampleApi.updateUser(1, {
-  name: '김철수',
+  name: 'Jane Smith',
 });
 
-// DELETE 요청
+// DELETE request
 await exampleApi.deleteUser(1);
 ```
 
-### API 클라이언트 기능
+### API Client Features
 
-- ✅ 자동 토큰 관리 (localStorage)
-- ✅ 요청/응답 인터셉터
-- ✅ 에러 핸들링
-- ✅ 401 오류 시 자동 로그아웃
-- ✅ TypeScript 타입 지원
+- ✅ Automatic token management (localStorage)
+- ✅ Request/Response interceptors
+- ✅ Error handling
+- ✅ Automatic logout on 401 errors
+- ✅ TypeScript type support
