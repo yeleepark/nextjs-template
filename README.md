@@ -13,7 +13,7 @@
 | `main` | 기본 템플릿 | Next.js, TypeScript, ESLint, Prettier |
 | `axios` | HTTP 클라이언트 환경 | Axios + 인터셉터 + 에러 핸들링 |
 | `react-query` | 서버 상태 관리 환경 | TanStack Query v5 + Devtools |
-| `tailwind` | CSS 프레임워크 환경 | Tailwind CSS v4 + PostCSS |
+| `tailwind` | CSS 프레임워크 환경 | Tailwind CSS v3 + PostCSS |
 | `axios+react-query+tailwind` | 통합 환경 | 위 세 가지 모두 포함 |
 
 ### 각 브랜치 상세 설명
@@ -38,7 +38,7 @@
 - Query keys 관리 패턴
 
 #### `tailwind` 브랜치
-- Tailwind CSS v4.1.17
+- Tailwind CSS v3.4.1
 - PostCSS 및 Autoprefixer 설정
 - 예제 UI 컴포넌트 (Button)
 - TypeScript 지원 설정 파일
