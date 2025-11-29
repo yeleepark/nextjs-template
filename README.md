@@ -20,11 +20,11 @@ yarn dev
 
 ## Tailwind CSS 설정
 
-이 템플릿은 Tailwind CSS v4를 포함하고 있습니다.
+이 템플릿은 Tailwind CSS v3를 포함하고 있습니다.
 
 ### 주요 기능
 
-- ✅ Tailwind CSS v4.1.17
+- ✅ Tailwind CSS v3.4.1
 - ✅ PostCSS 및 Autoprefixer 설정
 - ✅ 예제 UI 컴포넌트 (Button)
 - ✅ TypeScript 지원
