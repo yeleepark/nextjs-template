@@ -1,91 +1,91 @@
 # Next.js Template
 
-간단한 Next.js + TypeScript 템플릿입니다. ESLint와 Prettier가 기본 설정되어 있으며, "HI" 텍스트만 보여주는 랜딩 페이지가 포함되어 있습니다. Yarn Berry 기반으로 동작합니다.
+A simple Next.js + TypeScript template. Comes with ESLint and Prettier pre-configured, and includes a landing page displaying "HI" text. Built on Yarn Berry.
 
-## 📦 브랜치 구조
+## 📦 Branch Structure
 
-이 템플릿은 다양한 환경 설정을 브랜치별로 제공합니다. 필요한 환경에 따라 원하는 브랜치를 선택하여 사용할 수 있습니다.
+This template provides various environment configurations across different branches. Choose the branch that fits your needs.
 
-### 사용 가능한 브랜치
+### Available Branches
 
-| 브랜치 | 설명 | 포함 기술 |
-|--------|------|-----------|
-| `main` | 기본 템플릿 | Next.js, TypeScript, ESLint, Prettier |
-| `axios` | HTTP 클라이언트 환경 | Axios + 인터셉터 + 에러 핸들링 |
-| `react-query` | 서버 상태 관리 환경 | TanStack Query v5 + Devtools |
-| `tailwind` | CSS 프레임워크 환경 | Tailwind CSS v3 + PostCSS |
-| `axios+react-query+tailwind` | 통합 환경 | 위 세 가지 모두 포함 |
+| Branch | Description | Included Technologies |
+|--------|-------------|----------------------|
+| `main` | Base template | Next.js, TypeScript, ESLint, Prettier |
+| `axios` | HTTP client environment | Axios + Interceptors + Error handling |
+| `react-query` | Server state management | TanStack Query v5 + Devtools |
+| `tailwind` | CSS framework | Tailwind CSS v3 + PostCSS |
+| `axios+react-query+tailwind` | Integrated environment | All three above |
 
-### 각 브랜치 상세 설명
+### Branch Details
 
-#### `main` 브랜치
-- 최소한의 설정만 포함된 기본 템플릿
+#### `main` Branch
+- Minimal configuration base template
 - Next.js 14, TypeScript, ESLint, Prettier
-- 빠른 프로젝트 시작을 위한 기본 구조
+- Basic structure for quick project start
 
-#### `axios` 브랜치
-- Axios v1.13.2 기반 HTTP 클라이언트
-- 자동 토큰 관리 (localStorage)
-- 요청/응답 인터셉터 설정
-- 401 오류 시 자동 로그아웃
-- TypeScript 타입 지원 API 유틸리티
+#### `axios` Branch
+- Axios v1.13.2 based HTTP client
+- Automatic token management (localStorage)
+- Request/Response interceptor configuration
+- Automatic logout on 401 errors
+- TypeScript type support API utilities
 
-#### `react-query` 브랜치
+#### `react-query` Branch
 - TanStack Query (React Query) v5
-- QueryClient 기본 설정 (staleTime, gcTime 등)
-- React Query Devtools 포함
-- useQuery, useMutation 예제 hooks
-- Query keys 관리 패턴
+- QueryClient default configuration (staleTime, gcTime, etc.)
+- React Query Devtools included
+- Example hooks for useQuery and useMutation
+- Query keys management pattern
 
-#### `tailwind` 브랜치
+#### `tailwind` Branch
 - Tailwind CSS v3.4.1
-- PostCSS 및 Autoprefixer 설정
-- 예제 UI 컴포넌트 (Button)
-- TypeScript 지원 설정 파일
+- PostCSS and Autoprefixer configuration
+- Example UI component (Button)
+- TypeScript configuration support
 
-#### `axios+react-query+tailwind` 브랜치
-- 위 세 가지 환경 모두 통합
-- 실무 프로젝트에 바로 사용 가능한 완전한 환경
+#### `axios+react-query+tailwind` Branch
+- All three environments integrated
+- Production-ready complete environment
 
-## 🚀 사용 방법
+## 🚀 Usage
 
-### 1. 저장소 클론
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/yeleepark/nextjs-template.git
 cd nextjs-template
 ```
 
-### 2. 필요한 환경 선택
+### 2. Choose Your Environment
 
-원하는 환경의 브랜치를 체크아웃합니다:
+Checkout the branch for your desired environment:
 
-#### 옵션 A: 기본 템플릿만 사용 (main 브랜치)
+#### Option A: Use Base Template Only (main branch)
 
 ```bash
-# main 브랜치는 이미 체크아웃되어 있습니다
+# main branch is already checked out
 yarn install
 yarn dev
 ```
 
-#### 옵션 B: 특정 환경 하나만 사용
+#### Option B: Use Specific Environment
 
 ```bash
-# Axios만 필요한 경우
+# If you only need Axios
 git checkout axios
 
-# React Query만 필요한 경우
+# If you only need React Query
 git checkout react-query
 
-# Tailwind만 필요한 경우
+# If you only need Tailwind
 git checkout tailwind
 
-# 선택한 후 설치 및 실행
+# After selecting, install and run
 yarn install
 yarn dev
 ```
 
-#### 옵션 C: 모든 환경 통합 버전 사용
+#### Option C: Use Integrated Environment
 
 ```bash
 git checkout axios+react-query+tailwind
@@ -93,28 +93,28 @@ yarn install
 yarn dev
 ```
 
-### 3. 새 프로젝트로 시작하기
+### 3. Start a New Project
 
-선택한 브랜치를 기반으로 새 프로젝트를 시작하려면:
+To start a new project based on a selected branch:
 
 ```bash
-# 원하는 브랜치 체크아웃
+# Checkout desired branch
 git checkout axios+react-query+tailwind
 
-# 기존 git 히스토리 제거하고 새로 시작
+# Remove existing git history and start fresh
 rm -rf .git
 git init
 git add .
-git commit -m "feat: 초기 프로젝트 설정"
+git commit -m "feat: Initial project setup"
 
-# 새 원격 저장소에 연결
+# Connect to new remote repository
 git remote add origin <your-new-repo-url>
 git push -u origin main
 ```
 
-### 4. 환경 변수 설정 (axios 브랜치 사용 시)
+### 4. Environment Variables (when using axios branch)
 
-`.env.local` 파일을 생성하고 API URL을 설정하세요:
+Create a `.env.local` file and set the API URL:
 
 ```bash
 NEXT_PUBLIC_API_BASE_URL=http://localhost:3000/api
@@ -122,28 +122,28 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:3000/api
 
 ## Scripts
 
-- `yarn dev` - 개발 서버 실행
-- `yarn build` - 프로덕션 빌드
-- `yarn start` - 프로덕션 서버 실행
-- `yarn lint` - ESLint 검사
-- `yarn format` - Prettier 검사
-- `yarn format:write` - Prettier 자동 정렬
+- `yarn dev` - Run development server
+- `yarn build` - Build for production
+- `yarn start` - Run production server
+- `yarn lint` - Run ESLint check
+- `yarn format` - Run Prettier check
+- `yarn format:write` - Auto-format with Prettier
 
-## 💡 추천 사용 사례
+## 💡 Recommended Use Cases
 
-| 프로젝트 유형 | 추천 브랜치 |
-|--------------|------------|
-| 간단한 랜딩 페이지 | `main` 또는 `tailwind` |
-| API 연동이 필요한 프로젝트 | `axios` 또는 `axios+react-query+tailwind` |
-| 복잡한 서버 상태 관리가 필요한 경우 | `react-query` 또는 `axios+react-query+tailwind` |
-| 풀스택 웹 애플리케이션 | `axios+react-query+tailwind` |
+| Project Type | Recommended Branch |
+|--------------|-------------------|
+| Simple landing page | `main` or `tailwind` |
+| Project requiring API integration | `axios` or `axios+react-query+tailwind` |
+| Complex server state management needs | `react-query` or `axios+react-query+tailwind` |
+| Full-stack web application | `axios+react-query+tailwind` |
 
-## 📚 더 알아보기
+## 📚 Learn More
 
-각 브랜치의 상세 사용법은 해당 브랜치의 README를 참고하세요:
+For detailed usage of each branch, refer to the README in that branch:
 
 ```bash
-# 예: axios 브랜치의 README 확인
+# Example: Check axios branch README
 git checkout axios
 cat README.md
 ```
