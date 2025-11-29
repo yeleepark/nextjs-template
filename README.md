@@ -1,38 +1,38 @@
 # Next.js Template
 
-간단한 Next.js + TypeScript 템플릿입니다. ESLint와 Prettier가 기본 설정되어 있으며, "HI" 텍스트만 보여주는 랜딩 페이지가 포함되어 있습니다. Yarn Berry 기반으로 동작합니다.
+A simple Next.js + TypeScript template. Comes with ESLint and Prettier pre-configured, and includes a landing page displaying "HI" text. Built on Yarn Berry.
 
 ## Scripts
 
-- `yarn dev` - 개발 서버 실행
-- `yarn build` - 프로덕션 빌드
-- `yarn start` - 프로덕션 서버 실행
-- `yarn lint` - ESLint 검사
-- `yarn format` - Prettier 검사
-- `yarn format:write` - Prettier 자동 정렬
+- `yarn dev` - Run development server
+- `yarn build` - Build for production
+- `yarn start` - Run production server
+- `yarn lint` - Run ESLint check
+- `yarn format` - Run Prettier check
+- `yarn format:write` - Auto-format with Prettier
 
-## 시작하기
+## Getting Started
 
 ```bash
 yarn install
 yarn dev
 ```
 
-## TanStack Query (React Query v5) 설정
+## TanStack Query (React Query v5) Setup
 
-이 템플릿은 TanStack Query v5를 포함하고 있습니다.
+This template includes TanStack Query v5.
 
-### 주요 기능
+### Key Features
 
-- ✅ QueryClient 기본 설정 (staleTime, gcTime 등)
-- ✅ QueryProvider로 앱 전체 래핑
-- ✅ React Query Devtools 포함
-- ✅ 예제 hooks (useQuery, useMutation)
-- ✅ Query keys 관리 패턴
+- ✅ QueryClient default configuration (staleTime, gcTime, etc.)
+- ✅ App-wide QueryProvider wrapper
+- ✅ React Query Devtools included
+- ✅ Example hooks (useQuery, useMutation)
+- ✅ Query keys management pattern
 
-### 사용 예제
+### Usage Examples
 
-#### useQuery - 데이터 조회
+#### useQuery - Data Fetching
 
 ```typescript
 import { useUsers, useUser } from '@/hooks/queries/use-example';
@@ -40,8 +40,8 @@ import { useUsers, useUser } from '@/hooks/queries/use-example';
 function UserList() {
   const { data, isLoading, error } = useUsers();
 
-  if (isLoading) return <div>로딩 중...</div>;
-  if (error) return <div>에러 발생: {error.message}</div>;
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error occurred: {error.message}</div>;
 
   return (
     <ul>
@@ -53,7 +53,7 @@ function UserList() {
 }
 ```
 
-#### useMutation - 데이터 변경
+#### useMutation - Data Mutations
 
 ```typescript
 import { useCreateUser } from '@/hooks/queries/use-example';
@@ -64,10 +64,10 @@ function CreateUserForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     mutate(
-      { name: '홍길동', email: 'hong@example.com' },
+      { name: 'John Doe', email: 'john@example.com' },
       {
         onSuccess: () => {
-          console.log('사용자 생성 성공!');
+          console.log('User created successfully!');
         },
       },
     );
@@ -76,21 +76,21 @@ function CreateUserForm() {
   return (
     <form onSubmit={handleSubmit}>
       <button disabled={isPending}>
-        {isPending ? '생성 중...' : '사용자 생성'}
+        {isPending ? 'Creating...' : 'Create User'}
       </button>
     </form>
   );
 }
 ```
 
-#### Query Keys 관리
+#### Query Keys Management
 
 ```typescript
 import { queryKeys } from '@/lib/react-query/query-keys';
 
-// 모든 사용자 목록
+// All users list
 queryClient.invalidateQueries({ queryKey: queryKeys.users.all });
 
-// 특정 사용자
+// Specific user
 queryClient.invalidateQueries({ queryKey: queryKeys.users.detail(1) });
 ```
